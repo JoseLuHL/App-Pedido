@@ -33,20 +33,22 @@
 
                         <StackLayout Orientation="Vertical" 
                             >
-                            <Entry Text="" x:Name="EmailEntry" 
-                           TextColor="White" Placeholder="Email" 
+                            <Entry Text="" x:Name="TxtUsuario" 
+                           TextColor="White" Placeholder="Ingresa tu Usuario" 
                            PlaceholderColor="Gray" 
                            Keyboard="Email"  
                            HorizontalTextAlignment="Start"/>
 
-                            <Entry Text="" x:Name="PasswordEntry"  
+                            <Entry Text="" x:Name="TxtContraseña"  
                            TextColor="White" 
-                           Placeholder="Password" 
+                           Placeholder="Ingresa tu Contraseña" 
                            PlaceholderColor="Gray" 
                            IsPassword="True" 
                            HorizontalTextAlignment="Start"/>
 
+
                             <Label Text="" TextColor="#0072BD"/>
+                            
 
                             <Button Margin="0,10" 
                             Text="Login" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"
