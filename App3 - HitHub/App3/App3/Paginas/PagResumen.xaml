@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Paginas.PagResumen">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HasShadow="False">
+                <TableView Intent="Settings">
+                    <TableRoot>
+
+                        <TableSection Title="RESUMEN RECIENTE" >
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="" x:Name="LblRecienteDes" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
+                                    <Label Text="$25,500" x:Name="LblRecienteValor" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
+                                </StackLayout>
+                            </ViewCell>
+                            <!--Total Recientes-->
+                        </TableSection>
+                        <TableSection Title="RESUMEN POR ENTREGAR">
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="" x:Name="LblEntregadoDes" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
+                                    <Label Text="$25,500" x:Name="LblEntregadoValor" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                        <!--Total por Entregar-->
+                        <TableSection Title="RESUMEN VENDIDOS">
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="" x:Name="LblVendidoDes" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
+                                    <Label Text="$25,500" x:Name="LblVendidoValor" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                        <!--Total Cancelado-->
+                        <TableSection Title="Resumen Total Consumo">
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="" x:Name="LblConsumoDes" FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
+                                    <Label Text="$25,500" x:Name="LblConsumoValor" FontAttributes="Bold" FontSize="Large" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </Frame>
+
+            <!--<Frame OutlineColor="Black"> Total: 
+                <Label Text="Blah blah blah" />
+                <Label Text="Blah blah blah" />
+            </Frame>-->
+
+            <!--<Frame HasShadow="False" CornerRadius="25" Padding="2" BackgroundColor="#F69927">
+                <Frame HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="12">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                        <Label Text="Blah blah blah" />
+                        <Label Text="Blah blah blah" />
+                    </StackLayout>
+                </Frame>
+            </Frame>-->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

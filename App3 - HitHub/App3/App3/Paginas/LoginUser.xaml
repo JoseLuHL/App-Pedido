@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Paginas.LoginUser"
+             BackgroundColor="#2f4259"
+             >
+    <ContentPage.Content>
+        <StackLayout x:Name="MainStackLayout" BackgroundColor="#2f4259"
+               Padding="8">
+            <ScrollView >
+                <Grid x:Name="LayoutRoot" BackgroundColor="#2f4259">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" Orientation="Vertical" Margin="0,20,0,10">
+                        <Frame BackgroundColor="#34465d">
+                            <StackLayout Orientation="Vertical" 
+                                 VerticalOptions="Center" 
+                                 Margin="0,5,0,0" 
+                                 Opacity="0.8">
+                                <Image Source="login.png" Aspect="AspectFit" Margin="10" HeightRequest="100" WidthRequest="100"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <ActivityIndicator Grid.Row="1"  Grid.RowSpan="3" Color="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                    <StackLayout Grid.Row="2" 
+                         Orientation="Vertical"  
+                         Opacity="0.8">
+
+                        <StackLayout Orientation="Vertical" 
+                            >
+                            <Entry Text="" x:Name="EmailEntry" 
+                           TextColor="White" Placeholder="Email" 
+                           PlaceholderColor="Gray" 
+                           Keyboard="Email"  
+                           HorizontalTextAlignment="Start"/>
+
+                            <Entry Text="" x:Name="PasswordEntry"  
+                           TextColor="White" 
+                           Placeholder="Password" 
+                           PlaceholderColor="Gray" 
+                           IsPassword="True" 
+                           HorizontalTextAlignment="Start"/>
+
+                            <Label Text="" TextColor="#0072BD"/>
+
+                            <Button Margin="0,10" 
+                            Text="Login" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"
+                            BackgroundColor="#f57d00" 
+                            BorderRadius="10"
+                            TextColor="White"  />
+
+                            <Button Text="Iniciar con Facebook"  
+                            TextColor="White" 
+                            BorderRadius="10" 
+                            BackgroundColor="#3b5998"/>
+
+                            <Button Text="Iniciar con Google" 
+                            TextColor="White" 
+                            BorderRadius="10" 
+                            BackgroundColor="#c71610"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

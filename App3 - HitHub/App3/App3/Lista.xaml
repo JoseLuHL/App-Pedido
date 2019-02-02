@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Lista">
+    <ContentPage.Content >
+        <StackLayout Orientation="Horizontal">
+            <ActivityIndicator IsRunning="False"/>
+            <Label Text="Cargando"/>
+            <Label Text="prueba" x:Name="LblPrueba"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <StackLayout>
+        <Label Text="Seleccione un producto"/>
+        <Picker x:Name="PicProducto" SelectedIndexChanged="PicProducto_SelectedIndexChanged" ></Picker>
+        
+        <ListView x:Name="ListaEst"  ItemsSource="{Binding .}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                            <Label Text="{Binding NombreCompletoPro}" TextColor="Black"></Label>
+                            <Label Text="{Binding DocumentoPro}" FontSize="Small" TextColor="Gray"></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell> 
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>   
+        <Button Clicked="Button_Clicked"></Button>
+
+    </StackLayout>
+</ContentPage>

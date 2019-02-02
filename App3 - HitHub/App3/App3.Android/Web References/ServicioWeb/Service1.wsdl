@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.60/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.60/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.60/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+      <xsd:import schemaLocation="http://192.168.1.60/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://192.168.1.60/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IService1_obtenerRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GuardarXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarXML" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GuardarXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TablaReistros_InputMessage">
+    <wsdl:part name="parameters" element="tns:TablaReistros" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TablaReistros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TablaReistrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IniciarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IniciarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarProductos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarProductos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarProductosListaPrecio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosListaPrecio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarProductosListaPrecio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosListaPrecioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_server_Hosting_InputMessage">
+    <wsdl:part name="parameters" element="tns:server_Hosting" />
+  </wsdl:message>
+  <wsdl:message name="IService1_server_Hosting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:server_HostingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_server_InputMessage">
+    <wsdl:part name="parameters" element="tns:server" />
+  </wsdl:message>
+  <wsdl:message name="IService1_server_OutputMessage">
+    <wsdl:part name="parameters" element="tns:serverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarPedido_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarPedido" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarPedido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarMultiple_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMultiple" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ConsultarMultiple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TodosPacientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:TodosPacientes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TodosPacientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TodosPacientesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/obtenerRegistro" message="tns:IService1_obtenerRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/obtenerRegistroResponse" message="tns:IService1_obtenerRegistro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GuardarXML" message="tns:IService1_GuardarXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GuardarXMLResponse" message="tns:IService1_GuardarXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TablaReistros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TablaReistros" message="tns:IService1_TablaReistros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TablaReistrosResponse" message="tns:IService1_TablaReistros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IniciarSesion" message="tns:IService1_IniciarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IniciarSesionResponse" message="tns:IService1_IniciarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultarCliente" message="tns:IService1_ConsultarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultarClienteResponse" message="tns:IService1_ConsultarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultarProductos" message="tns:IService1_ConsultarProductos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultarProductosResponse" message="tns:IService1_ConsultarProductos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductosListaPrecio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultarProductosListaPrecio" message="tns:IService1_ConsultarProductosListaPrecio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultarProductosListaPrecioResponse" message="tns:IService1_ConsultarProductosListaPrecio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="server_Hosting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/server_Hosting" message="tns:IService1_server_Hosting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/server_HostingResponse" message="tns:IService1_server_Hosting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="server">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/server" message="tns:IService1_server_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/serverResponse" message="tns:IService1_server_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPedido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarPedido" message="tns:IService1_InsertarPedido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarPedidoResponse" message="tns:IService1_InsertarPedido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMultiple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ConsultarMultiple" message="tns:IService1_ConsultarMultiple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ConsultarMultipleResponse" message="tns:IService1_ConsultarMultiple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TodosPacientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TodosPacientes" message="tns:IService1_TodosPacientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TodosPacientesResponse" message="tns:IService1_TodosPacientes_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerRegistro">
+      <soap:operation soapAction="http://tempuri.org/IService1/obtenerRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarXML">
+      <soap:operation soapAction="http://tempuri.org/IService1/GuardarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TablaReistros">
+      <soap:operation soapAction="http://tempuri.org/IService1/TablaReistros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <soap:operation soapAction="http://tempuri.org/IService1/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultarProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductosListaPrecio">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultarProductosListaPrecio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="server_Hosting">
+      <soap:operation soapAction="http://tempuri.org/IService1/server_Hosting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="server">
+      <soap:operation soapAction="http://tempuri.org/IService1/server" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPedido">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMultiple">
+      <soap:operation soapAction="http://tempuri.org/IService1/ConsultarMultiple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TodosPacientes">
+      <soap:operation soapAction="http://tempuri.org/IService1/TodosPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://192.168.1.60/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

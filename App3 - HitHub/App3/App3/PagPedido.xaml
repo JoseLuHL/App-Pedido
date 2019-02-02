@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.PagPedido"
+             BackgroundColor="#2C3E50">
+    <ContentPage.Content>
+        <!--<ScrollView>-->
+        <StackLayout Padding="10" Margin="0,0,0,0">
+            <Frame HasShadow="true"  CornerRadius="7" BackgroundColor="#2f4259" OutlineColor="White">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="130"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition  Height="20"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry VerticalOptions="EndAndExpand"  TextColor="White"  Completed="TxtIdentificacion_Completed" x:Name="TxtIdentificacion" HorizontalOptions="FillAndExpand"/>
+                        <Image x:Name="ImgCliente"  IsVisible="True"  Source="lupa.png" VerticalOptions="End"  HeightRequest="23" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer                                    
+                                Tapped="OnImageNameTapped"
+                                NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <ActivityIndicator VerticalOptions="End" Color="Yellow" HorizontalOptions="End"  WidthRequest="20" HeightRequest="15" x:Name="ActvConsultarCliente" IsRunning="False"/>
+                    </StackLayout>
+
+                    <Label TextColor="White" Text="Documento:"  Grid.Row="1"/>
+
+                    <Label Text="" TextColor="White" x:Name="LblNombreCliente" Grid.Column="1" VerticalOptions="EndAndExpand"/>
+                    <Label Text="Nombre:" TextColor="White" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+            </Frame>
+
+            <Frame HasShadow="True" BackgroundColor="#2f4259">
+                <Picker x:Name="PicProducto" TextColor="White" Title="Seleccionar producto" SelectedIndexChanged="PicProducto_SelectedIndexChanged" ></Picker>
+            </Frame>
+
+            <Frame HasShadow="true" BackgroundColor="#2f4259">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="" TextColor="White" x:Name="LblDescripcionProducto" VerticalOptions="EndAndExpand"/>
+                    <Label Text="Descripción:" TextColor="White" Grid.Row="1"/>
+
+                    <Entry  Grid.Column="1" TextColor="White" Keyboard="Numeric" x:Name="TxtCantidad" HorizontalTextAlignment="Center"/>
+                    <Label Text="Cantidad:" TextColor="White" Grid.Row="1" Grid.Column="1"/>
+
+                    <Label Text="" x:Name="LblVrDetalle" TextColor="White" VerticalOptions="EndAndExpand" Grid.Column="2" FontAttributes="Bold" FontSize="Large" />
+                    <Label Text="Vr Detalle:" Grid.Row="1" TextColor="White" Grid.Column="2"/>
+                </Grid>
+            </Frame>
+
+            <StackLayout HorizontalOptions="CenterAndExpand"   Orientation="Horizontal">
+                <Button Text="Agregar" 
+                            x:Name="BtnAgregar" 
+                            Clicked="BtnAgregar_Clicked" 
+                           
+                            BorderWidth="1"
+                            BorderRadius="5"
+                            CornerRadius="17"
+                            VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HeightRequest="37"
+                    WidthRequest="150"
+                        Opacity="100"
+                            TextColor="White"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                             />
+                <Button Text="Limpiar"
+                            BorderWidth="1"
+                            BorderRadius="5"
+                            CornerRadius="17"
+                            VerticalOptions="Center"
+                        Opacity="100"
+                            TextColor="White"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                    HorizontalOptions="Center"
+                    HeightRequest="37"
+                    WidthRequest="150" x:Name="TxtLimpiar" Clicked="TxtLimpiar_Clicked"  
+                        />
+            </StackLayout>
+            
+            <StackLayout>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Codigo" TextColor="White" />
+                    <Label Text="Descripción" TextColor="White" Grid.Column="1"/>
+                    <Label Text="Cantidad" TextColor="White" Grid.Column="2"/>
+                    <Label Text="Var Detalle" TextColor="White" Grid.Column="3"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout>
+                <ListView x:Name="ListaEst" ItemsSource="{Binding .}" SeparatorColor="White" ItemSelected="ListaEst_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell >
+                                <ViewCell.View >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Codigo}" TextColor="White" ></Label>
+                                        <Label Text="{Binding Descripcion}" TextColor="White" Margin="10,0,0,0"  Grid.Column="1"></Label>
+                                        <Label Text="{Binding Cantidad}" TextColor="White" HorizontalTextAlignment="Center"  Grid.Column="2"></Label>
+                                        <Label Text="{Binding VarDetalle , StringFormat='{0:N}'}" TextColor="White" HorizontalTextAlignment="Center" Grid.Column="3" FontAttributes="Bold"></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Guardar" x:Name="BtnGuardar"  
+                    Clicked="BtnGuardar_Clicked"
+                            Opacity="100"
+                            TextColor="White"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                    BorderWidth="1"
+                    BorderRadius="5"
+                    CornerRadius="20"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HeightRequest="37"
+                    WidthRequest="200"/>
+                    <ActivityIndicator IsRunning="False" HeightRequest="10"  WidthRequest="25" x:Name="ActvGuardar"/>
+                </StackLayout>
+
+                <Label x:Name="TxtSubTotal" 
+                       TextColor="White" 
+                       Text="0" Grid.Column="1"
+                       FontSize="20" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="EndAndExpand"
+                       HorizontalTextAlignment="Center" />
+            </Grid>            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

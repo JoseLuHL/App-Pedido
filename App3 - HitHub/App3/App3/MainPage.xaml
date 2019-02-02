@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.MainPage">
+
+    <StackLayout Padding="0" BackgroundColor="WhiteSmoke">
+
+        <StackLayout Padding="0,50,0,25" BackgroundColor="Black" >
+            <Label Text="PEDIDOS SA." HorizontalTextAlignment="Center"  TextColor="White" FontAttributes="Bold" Margin="0,0,0,10"></Label>
+            <Label Text="Inicio de Sesión"  HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold"></Label>
+        </StackLayout>
+
+        <StackLayout>
+            <Image Source="inicio.png" WidthRequest="55" HeightRequest="55"></Image>
+        </StackLayout>
+        <StackLayout VerticalOptions="Center" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Text="Usuario:" FontSize="Large" VerticalTextAlignment="Center"/>
+                <Entry Placeholder="Ingrese un usuario" x:Name="TxtUsuario" Grid.Column="1"/>
+
+                <Label Text="Contraseña:" FontSize="Large" Grid.Row="1" VerticalTextAlignment="Center"/>
+                <Entry Placeholder="Ingrese su contraseña" x:Name="TxtContraseña" Grid.Row="1" Grid.Column="1" IsPassword="True"/>
+
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="2">
+                    <ActivityIndicator IsRunning="False" x:Name="ActivarCargar" HeightRequest="30"/>
+                </StackLayout>
+
+            </Grid>
+            <Button Text="Entrar" x:Name="BtnEntrar2" Clicked="BtnEntrar2_Clicked"></Button>
+            <!--<Button Text="Entrar" BorderColor="White" TextColor="White"  HeightRequest="56" HorizontalOptions="FillAndExpand" BorderWidth="220" WidthRequest="200" x:Name="BtnEntrar" Clicked="BtnEntrar_Clicked"/>-->
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

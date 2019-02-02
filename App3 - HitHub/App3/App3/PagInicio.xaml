@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.PagInicio"
+             Title="DEMO" >
+    <ScrollView>
+        <Grid RowSpacing="0" BackgroundColor="#2C3E50">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="Auto"/>-->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" HorizontalOptions="Center"  Spacing="0" Margin="0,110,0,0">
+                <Label Text="Jose Luis Hinestriza Lopez" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Info. Interes" TextColor="WhiteSmoke" HorizontalOptions="Center" FontSize="Small"  FontAttributes="Italic"/>
+            </StackLayout>
+
+            <Frame BackgroundColor="SlateGray" Grid.Row="1" HasShadow="False" >
+                <!--<StackLayout Orientation="Horizontal">-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Spacing="0" >
+                        <Label Text="Pedidos recientes" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                        <Button Text="$25.000" IsEnabled="False" BackgroundColor="Orange"  WidthRequest="40"  HeightRequest="35" BorderRadius="10"/>
+                        <Label Text="# 1" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Spacing="0">
+                        <Label Text="Deuda"  TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Button Text="$25.000" IsEnabled="False" BackgroundColor="Orange" WidthRequest="40" HeightRequest="35" BorderRadius="10"/>
+                        <Label Text="Pedidos: # 3" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
+                    </StackLayout>
+                </Grid>
+
+            </Frame>
+
+            <Grid Grid.Row="2" Margin="3,10,3,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--<Frame  OutlineColor="Blue" HasShadow="true" HeightRequest="30">-->
+                <StackLayout Orientation="Horizontal"
+                             Spacing="0" 
+                             Padding="6,0,0,0"
+                             BackgroundColor ="#17202A">
+                    <Image  Source="nuevo.png" 
+                            HeightRequest="42" 
+                            HorizontalOptions="Start"/>
+                    <Button Text="Nuevo Pedido"
+                            x:Name="BtnCargarDatos"
+                            Clicked="BtnCargarDatos_Clicked"
+                            FontSize="Micro"
+                            BorderRadius="0"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#17202A" BorderColor="Red"/>
+                    <!--<Label Text=" Title" VerticalOptions="Center"></Label>-->
+                </StackLayout>
+                <!--</Frame>-->
+
+                <StackLayout Orientation="Horizontal" 
+                             Spacing="0" 
+                             Padding="6,0,0,0" 
+                             BackgroundColor ="#17202A" 
+                             Grid.Column="1">
+                    <Image  Source="compra.png"
+                            HeightRequest="40" 
+                            HorizontalOptions="Start"/>
+                    <Button Text="Recientes" 
+                            x:Name="BtnReciente"
+                            Clicked="BtnReciente_Clicked"
+                            BorderRadius="0"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor ="#17202A" BorderColor="SteelBlue" 
+                           />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             Padding="15,0,0,0" Spacing="0"  
+                             BackgroundColor ="#17202A" 
+                             Grid.Column="0" Grid.Row="1">
+                    <Image  Source="estado.png"
+                            HeightRequest="40" 
+                            HorizontalOptions="Start"/>
+                    <Button Text="Estado" 
+                            BorderRadius="0"
+                            x:Name="BtnEstadoCuenta"
+                            Clicked="BtnEstadoCuenta_Clicked"
+                            BorderWidth="0"
+                            Opacity="100"
+                            FontSize="Micro"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                           BackgroundColor ="#17202A" BorderColor="White" 
+                            />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             Spacing="0"  
+                             Padding="6,0,0,0" 
+                             BackgroundColor ="#17202A" 
+                             Grid.Column="1" Grid.Row="1">
+                    <Image  Source="carpeta.png"
+                            HeightRequest="40" 
+                            HorizontalOptions="Start"/>
+                    <Button Text="Historial" 
+                            BorderRadius="0"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                             BackgroundColor ="#17202A" BorderColor="White" 
+                            />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" 
+                             Spacing="0"  
+                             Padding="6,0,0,0"  
+                             BackgroundColor ="#17202A"  
+                             Grid.Column="0" Grid.Row="2">
+                    <Image Source="datos.png"
+                            HeightRequest="40" 
+                           HorizontalOptions="Start"/>
+                    <Button Text="Mis Datos" 
+                            BorderRadius="2"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                            />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                             Spacing="0" Padding="6,0,0,0" 
+                             BackgroundColor ="#17202A" 
+                             Grid.Column="1" 
+                             Grid.Row="2">
+                    <Image  Source="salir.png"
+                            HeightRequest="40" 
+                            HorizontalOptions="Start"/>
+
+                    <Button Text="Salir" 
+                            BorderRadius="2"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                            HorizontalOptions="FillAndExpand"
+                            
+                            />
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="3" BackgroundColor="#2C3E50" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="COREDI - 2019 © Todos los derechos reservados" TextColor="White" HorizontalOptions="Center" Opacity="200" FontSize="Micro"></Label>
+            </StackLayout>
+
+            <Image Source="usuario.png" HorizontalOptions="Center" 
+                     HeightRequest="75" 
+                     WidthRequest="75" 
+                     TranslationY="0" 
+                     Grid.Row="0"/>
+
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App5"
+             x:Class="App5.MainPage"
+             Title="DEMO" >
+    <ScrollView>
+        <Grid RowSpacing="0" BackgroundColor="#2C3E50">
+            <Grid.RowDefinitions>
+                --><!--<RowDefinition Height="Auto"/>--><!--
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <StackLayout Grid.Row="0" HorizontalOptions="Center"  Spacing="0" Margin="0,110,0,0">
+                <Label Text="Jose Luis Hinestriza Lopez" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Info. Interes" TextColor="Black" HorizontalOptions="Center" FontAttributes="Italic"/>
+            </StackLayout>
+
+            <Frame BackgroundColor="SlateGray" Grid.Row="1" HasShadow="False" >
+                --><!--<StackLayout Orientation="Horizontal">--><!--
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackLayout Spacing="0" >
+                        <Label Text="Pedidos recientes" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                        <Button Text="$25.000"  BackgroundColor="Orange" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
+                        <Label Text="# 3" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Spacing="0">
+                        <Label Text="Deuda"  TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Button Text="$25.000"  BackgroundColor="Orange" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
+                        <Label Text="Pedidos: # 3" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
+                    </StackLayout>
+
+                </Grid>
+                    
+                --><!--</StackLayout>--><!--
+            </Frame>
+
+            <Grid Grid.Row="2" Margin="3,10,3,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                --><!--<Frame  OutlineColor="Blue" HasShadow="true" HeightRequest="30">--><!--
+                <StackLayout Orientation="Horizontal" Spacing="0"  BackgroundColor ="#17202A">
+                    <Image  Source="nuevo.png" HorizontalOptions="Start"/>
+                    <Button Text="Nuevo Pedido"
+                            FontSize="Micro"
+                            BorderRadius="0"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#17202A" BorderColor="Red" 
+                            Image="nuevo.png"/>
+                    --><!--<Label Text=" Title" VerticalOptions="Center"></Label>--><!--
+                    </StackLayout>
+                --><!--</Frame>--><!--
+
+                <StackLayout Orientation="Horizontal" Spacing="0"  BackgroundColor ="#17202A"  Grid.Column="1">
+                    <Image  Source="compra.png" HorizontalOptions="Start"/>
+                    <Button Text="Recientes" 
+                            BorderRadius="0"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor ="#17202A" BorderColor="SteelBlue" 
+                            Image="info.png"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0"  BackgroundColor ="#17202A" Grid.Column="0" Grid.Row="1">
+                    <Image  Source="estado.png" HorizontalOptions="Start"/>
+                    <Button Text="Estado" 
+                            BorderRadius="0"
+                            BorderWidth="0"
+                            Opacity="100"
+                            FontSize="Micro"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                           BackgroundColor ="#17202A" BorderColor="White" 
+                            Image="info.png"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Spacing="0"   BackgroundColor ="#17202A" Grid.Column="1" Grid.Row="1">
+                    <Image  Source="carpeta.png" HorizontalOptions="Start"/>
+                    <Button Text="Historial" 
+                            BorderRadius="0"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                             BackgroundColor ="#17202A" BorderColor="White" 
+                            Image="info.png"/>
+                </StackLayout>
+
+                
+                <StackLayout Orientation="Horizontal" Spacing="0"  BackgroundColor ="#17202A"  Grid.Column="0" Grid.Row="2">
+                    <Image Source="datos.png" HorizontalOptions="Start"/>
+                    <Button Text="Mis Datos" 
+                            BorderRadius="0"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                            Image="info.png"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0" BackgroundColor ="#17202A" Grid.Column="1" Grid.Row="2">
+                    <Image  Source="salir.png" HorizontalOptions="Start"/>
+                    <Button Text="Salir" 
+                            BorderRadius="0"
+                            FontSize="Micro"
+                            BorderWidth="0"
+                            Opacity="100"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor ="#17202A" BorderColor="White" 
+                            Image="info.png"/>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="3" BackgroundColor="#2C3E50" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="COREDI - 2019 © Todos los derechos reservados" TextColor="White" HorizontalOptions="Center" Opacity="200" FontSize="Micro"></Label>
+            </StackLayout>
+            
+            <Image Source="usuario.png" HorizontalOptions="Center" 
+                     HeightRequest="75" 
+                     WidthRequest="75" 
+                     TranslationY="0" 
+                     Grid.Row="0"/>
+            
+            
+        </Grid>
+    </ScrollView>
+    
+</ContentPage>-->

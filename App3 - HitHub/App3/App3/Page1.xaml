@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Paginas.Page1">
+    <ContentPage.Content>
+        <StackLayout Margin="10" >
+            <!--<Button Text="Probar" Clicked="Button_Clicked"/>-->
+            <StackLayout Spacing="0">
+                <Label Text="PEDIDOS PENDIENTES" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                <ListView x:Name="LstPedido" ItemsSource="{Binding .}" SeparatorColor="Black"  HeightRequest="160" ItemSelected="LstPedido_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Ped_Numero}"></Label>
+                                        <Label Text="{Binding Ped_Fecha}" Margin="10,0,0,0"  Grid.Column="1"></Label>
+                                        <Label Text="{Binding Ped_Valor , StringFormat='{0:N}'}" HorizontalTextAlignment="Center" Grid.Column="2" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding Ped_Estado}" TextColor="Green" Grid.Column="3"></Label>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+           
+            
+            <StackLayout x:Name="ActDetallePedido" IsVisible="False">
+                <Label Text="DETALLE DE PEDIDO" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Codigo" HorizontalOptions="Start" />
+                    <Label Text="Descripción" Grid.Column="1"/>
+                    <Label Text="Cantidad"  Grid.Column="2"/>
+                    <Label Text="Var Detalle"  Grid.Column="3"/>
+                </Grid>
+                <StackLayout>
+                    <ListView x:Name="ListaEst" ItemsSource="{Binding .}"  HasUnevenRows="True">
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell >
+                                    <ViewCell.View >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="{Binding Codigo}"></Label>
+                                            <Label Text="{Binding Descripcion}" Grid.Column="1"></Label>
+                                            <Label Text="{Binding Cantidad}" HorizontalTextAlignment="Center"  Grid.Column="2"></Label>
+                                            <Label Text="{Binding VarDetalle , StringFormat='{0:N}'}" HorizontalTextAlignment="Center" Grid.Column="3" FontAttributes="Bold"></Label>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+            
+
+            <StackLayout x:Name="Activador" IsVisible="False"  Orientation="Horizontal" Spacing="0">
+                <ActivityIndicator x:Name="ActIndicadorCargar" Color="Maroon" WidthRequest="20" HeightRequest="20" IsRunning="True"/>
+                <Label Text="Cargando"/>
+            </StackLayout>
+            <Label Text="...." x:Name="LblMensaje"/>
+            <Button Text="Cancelar Pedido" x:Name="BtnCancelarPediso" Clicked="BtnCancelarPediso_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
