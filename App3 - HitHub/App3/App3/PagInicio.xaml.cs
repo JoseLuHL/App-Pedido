@@ -13,9 +13,10 @@ namespace App3
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PagInicio : ContentPage
 	{
-		public PagInicio ()
+		public PagInicio (string NombreUsuario)
 		{
-			InitializeComponent ();          
+			InitializeComponent ();
+            LblNombreUsuario.Text = NombreUsuario;
 
         }
 
@@ -61,6 +62,31 @@ namespace App3
         private async void BtnEstadoCuenta_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new PagResumen());
+        }
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    base.OnBackButtonPressed();
+        //    return true;
+        //}
+        protected override bool OnBackButtonPressed()
+        {
+            // Begin an asyncronous task on the UI thread because we intend to ask the users permission.
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                if (await DisplayAlert("Salir", "¿Esta seguro de cerrar la sesión?.", "Si", "No"))
+                {
+                    await Navigation.PopModalAsync();
+                }
+            });
+            return true;
+
+        }
+
+        private async void BtnCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+            if (await DisplayAlert("Salir", "¿Esta seguro de cerrar la sesión?.", "Si", "No"))
+                await Navigation.PopModalAsync();
         }
     }
 }

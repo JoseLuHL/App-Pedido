@@ -15,7 +15,11 @@
             </Grid.RowDefinitions>
 
             <StackLayout Grid.Row="0" HorizontalOptions="Center"  Spacing="0" Margin="0,110,0,0">
-                <Label Text="Jose Luis Hinestriza Lopez" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Jose Luis Hinestriza Lopez" 
+                       x:Name="LblNombreUsuario"
+                       TextColor="White" 
+                       FontSize="Medium" 
+                       FontAttributes="Bold"/>
                 <Label Text="Info. Interes" TextColor="WhiteSmoke" HorizontalOptions="Center" FontSize="Small"  FontAttributes="Italic"/>
             </StackLayout>
 
@@ -165,7 +169,7 @@
                             HeightRequest="40" 
                             HorizontalOptions="Start"/>
 
-                    <Button Text="Salir" 
+                    <Button Text="Cerrar Sesión" 
                             BorderRadius="2"
                             FontSize="Micro"
                             BorderWidth="0"
@@ -173,6 +177,8 @@
                             TextColor="White"
                             BackgroundColor ="#17202A" BorderColor="White" 
                             HorizontalOptions="FillAndExpand"
+                            x:Name="BtnCerrarSesion"
+                            Clicked="BtnCerrarSesion_Clicked"
                             
                             />
                 </StackLayout>

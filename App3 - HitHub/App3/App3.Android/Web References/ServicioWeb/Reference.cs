@@ -58,6 +58,8 @@ namespace App3.Droid.ServicioWeb {
         
         private System.Threading.SendOrPostCallback TodosPacientesOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ConsultarUsuarioOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -137,6 +139,9 @@ namespace App3.Droid.ServicioWeb {
         
         /// <remarks/>
         public event TodosPacientesCompletedEventHandler TodosPacientesCompleted;
+        
+        /// <remarks/>
+        public event ConsultarUsuarioCompletedEventHandler ConsultarUsuarioCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -571,6 +576,38 @@ namespace App3.Droid.ServicioWeb {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ConsultarUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ConsultarUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string usuario, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string contraseña) {
+            object[] results = this.Invoke("ConsultarUsuario", new object[] {
+                        usuario,
+                        contraseña});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ConsultarUsuarioAsync(string usuario, string contraseña) {
+            this.ConsultarUsuarioAsync(usuario, contraseña, null);
+        }
+        
+        /// <remarks/>
+        public void ConsultarUsuarioAsync(string usuario, string contraseña, object userState) {
+            if ((this.ConsultarUsuarioOperationCompleted == null)) {
+                this.ConsultarUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConsultarUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("ConsultarUsuario", new object[] {
+                        usuario,
+                        contraseña}, this.ConsultarUsuarioOperationCompleted, userState);
+        }
+        
+        private void OnConsultarUsuarioOperationCompleted(object arg) {
+            if ((this.ConsultarUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ConsultarUsuarioCompleted(this, new ConsultarUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -996,6 +1033,32 @@ namespace App3.Droid.ServicioWeb {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ConsultarUsuarioCompletedEventHandler(object sender, ConsultarUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ConsultarUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ConsultarUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

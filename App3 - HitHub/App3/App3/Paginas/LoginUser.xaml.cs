@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,54 @@ namespace App3.Paginas
 
         private async void BtnIniciarSesion_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PagInicio());
+            try
+            {
+                if (TxtContraseña.Text != "" & TxtUsuario.Text != "")
+                {
+                    Activador.IsVisible = true;
+                    var usuario = await IniciarSesion(TxtUsuario.Text, TxtContraseña.Text);
+                    if (usuario != "")
+                    {
+                        //await DisplayAlert("Res",usuario,"OK");
+                        Activador.IsVisible = false;
+                        await Navigation.PushModalAsync(new PagInicio(usuario));
+                    }
+                    else
+                    {
+                        await DisplayAlert("Res", "Usuario o contraseña incorrecto", "OK");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Res", "Debe completar los campos para continuar", "OK");
+                }
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Res", "Sin conexión", "OK");
+            }
+           
+        }
+
+        public async Task<string> IniciarSesion(string usuario, string contraseña)
+        {
+            Droid.ServicioWeb.Service1 service = new Droid.ServicioWeb.Service1();
+            string resp = "";
+            await Task.Run(() => { resp = service.ConsultarUsuario(usuario, contraseña); });
+            return resp;
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            // Begin an asyncronous task on the UI thread because we intend to ask the users permission.
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                if (await DisplayAlert("Salir", "¿Desea salir?.", "Si", "No"))
+                {
+                    await Navigation.PopModalAsync();
+                }
+            });
+            return true;
         }
     }
 }
