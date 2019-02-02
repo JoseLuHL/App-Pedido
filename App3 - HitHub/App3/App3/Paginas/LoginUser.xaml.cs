@@ -28,14 +28,16 @@ namespace App3.Paginas
                     var usuario = await IniciarSesion(TxtUsuario.Text, TxtContraseña.Text);
                     if (usuario != "")
                     {
-                        //await DisplayAlert("Res",usuario,"OK");
-                        Activador.IsVisible = false;
+                        //await DisplayAlert("Res",usuario,"OK");                        
+                        TxtUsuario.Text=String.Empty;
+                        TxtContraseña.Text = String.Empty;
                         await Navigation.PushModalAsync(new PagInicio(usuario));
                     }
                     else
                     {
                         await DisplayAlert("Res", "Usuario o contraseña incorrecto", "OK");
                     }
+                    Activador.IsVisible = false;
                 }
                 else
                 {
@@ -63,9 +65,7 @@ namespace App3.Paginas
             Device.BeginInvokeOnMainThread(async () =>
             {
                 if (await DisplayAlert("Salir", "¿Desea salir?.", "Si", "No"))
-                {
                     await Navigation.PopModalAsync();
-                }
             });
             return true;
         }
