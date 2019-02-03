@@ -6,10 +6,10 @@
     <ContentPage.Content>
         <!--<ScrollView>-->
         <StackLayout Padding="10" Margin="0,0,0,0">
-            <Frame HasShadow="true"  
+            <!--<Frame HasShadow="true"  
                    CornerRadius="7" 
-                   BackgroundColor="{StaticResource ColorFonfo}" 
-                   OutlineColor="White">
+                   BackgroundColor="{StaticResource ColorFondo}" 
+                   OutlineColor="White">-->
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -64,10 +64,11 @@
                            TextColor="{StaticResource ColorTexto}" 
                            Grid.Row="1" Grid.Column="1"/>
                 </Grid>
-            </Frame>
+            <!--</Frame>-->
+            <!--Linea horizontal de color-->
 
             <Frame HasShadow="True" 
-                   BackgroundColor="{StaticResource ColorFonfo}">
+                   BackgroundColor="{StaticResource ColorFondo}">
                 
                 <Picker x:Name="PicProducto" 
                         TextColor="{StaticResource ColorTexto}" 
@@ -75,7 +76,7 @@
                         SelectedIndexChanged="PicProducto_SelectedIndexChanged" ></Picker>
             </Frame>
 
-            <Frame HasShadow="true" BackgroundColor="{StaticResource ColorFonfo}">
+            <!--<Frame HasShadow="true" BackgroundColor="{StaticResource ColorFondo}">-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -105,7 +106,8 @@
                     
                     <Label Text="Cantidad:" 
                            TextColor="{StaticResource ColorTexto}" 
-                           Grid.Row="1" Grid.Column="1"/>
+                           Grid.Row="1" Grid.Column="1"
+                           HorizontalTextAlignment="Center"/>
 
                     <Label Text="" 
                            x:Name="LblVrDetalle" 
@@ -115,42 +117,23 @@
                            FontAttributes="Bold" 
                            FontSize="Large" />
                     
-                    <Label Text="Vr Detalle:" 
+                    <Label Text="Vr Unitario:" 
                            Grid.Row="1" 
                            TextColor="{StaticResource ColorTexto}" 
                            Grid.Column="2"/>
                 </Grid>
-            </Frame>
-
+            <!--</Frame>-->
+            
             <StackLayout HorizontalOptions="CenterAndExpand"   
                          Orientation="Horizontal">
                 
                 <Button Text="Agregar" 
                             x:Name="BtnAgregar" 
-                            Clicked="BtnAgregar_Clicked" 
-                           
-                            BorderWidth="1"
-                            BorderRadius="5"
-                            CornerRadius="17"
-                            VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    HeightRequest="37"
-                    WidthRequest="150"
-                        Opacity="100"
-                            TextColor="{StaticResource ColorTexto}"
-                            BackgroundColor ="#17202A" BorderColor="White" 
-                             />
+                            Clicked="BtnAgregar_Clicked"                            
+                            Style="{StaticResource EstiloBotones}"/>
                 <Button Text="Limpiar"
-                            BorderWidth="1"
-                            BorderRadius="5"
-                            CornerRadius="17"
-                            VerticalOptions="Center"
-                        Opacity="100"
-                            TextColor="{StaticResource ColorTexto}"
-                            BackgroundColor ="#17202A" BorderColor="White" 
-                    HorizontalOptions="Center"
-                    HeightRequest="37"
-                    WidthRequest="150" x:Name="TxtLimpiar" Clicked="TxtLimpiar_Clicked"  
+                        Style="{StaticResource EstiloBotones}"
+                        x:Name="TxtLimpiar" Clicked="TxtLimpiar_Clicked"  
                         />
             </StackLayout>
             
@@ -214,16 +197,7 @@
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Guardar" x:Name="BtnGuardar"  
                     Clicked="BtnGuardar_Clicked"
-                            Opacity="100"
-                            TextColor="{StaticResource ColorTexto}"
-                            BackgroundColor ="#17202A" BorderColor="White" 
-                    BorderWidth="1"
-                    BorderRadius="5"
-                    CornerRadius="20"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    HeightRequest="37"
-                    WidthRequest="200"/>
+                            Style="{StaticResource EstiloBotones}"/>
                     <ActivityIndicator IsRunning="False" HeightRequest="10"  WidthRequest="25" x:Name="ActvGuardar"/>
                 </StackLayout>
 

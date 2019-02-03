@@ -17,7 +17,7 @@
             <StackLayout Grid.Row="0" HorizontalOptions="Center"  Spacing="0" Margin="0,110,0,0">
                 <Label Text="Jose Luis Hinestriza Lopez" 
                        x:Name="LblNombreUsuario"
-                       TextColor="White" 
+                       TextColor="{StaticResource ColorTexto}"   
                        FontSize="Medium" 
                        FontAttributes="Bold"/>
                 <Label Text="Info. Interes" TextColor="WhiteSmoke" HorizontalOptions="Center" FontSize="Small"  FontAttributes="Italic"/>
@@ -32,13 +32,13 @@
                     </Grid.ColumnDefinitions>
 
                     <StackLayout Spacing="0" >
-                        <Label Text="Pedidos recientes" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                        <Label Text="Pedidos recientes" HorizontalOptions="Center" TextColor="{StaticResource ColorTexto}"   FontAttributes="Bold"/>
                         <Button Text="$25.000" IsEnabled="False" BackgroundColor="Orange"  WidthRequest="40"  HeightRequest="35" BorderRadius="10"/>
                         <Label Text="# 1" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
                     </StackLayout>
 
                     <StackLayout Grid.Column="1" Spacing="0">
-                        <Label Text="Deuda"  TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Label Text="Deuda"  TextColor="{StaticResource ColorTexto}"   HorizontalOptions="Center" FontAttributes="Bold"/>
                         <Button Text="$25.000" IsEnabled="False" BackgroundColor="Orange" WidthRequest="40" HeightRequest="35" BorderRadius="10"/>
                         <Label Text="Pedidos: # 3" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
                     </StackLayout>
@@ -73,7 +73,7 @@
                             BorderRadius="0"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor="#17202A" BorderColor="Red"/>
                     <!--<Label Text=" Title" VerticalOptions="Center"></Label>-->
@@ -95,7 +95,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor ="#17202A" BorderColor="SteelBlue" 
                            />
@@ -115,7 +115,7 @@
                             BorderWidth="0"
                             Opacity="100"
                             FontSize="Micro"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                            BackgroundColor ="#17202A" BorderColor="White" 
                             />
@@ -134,7 +134,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                              BackgroundColor ="#17202A" BorderColor="White" 
                             />
@@ -154,7 +154,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor ="#17202A" BorderColor="White" 
                             />
@@ -174,7 +174,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             BackgroundColor ="#17202A" BorderColor="White" 
                             HorizontalOptions="FillAndExpand"
                             x:Name="BtnCerrarSesion"
@@ -185,7 +185,7 @@
             </Grid>
 
             <StackLayout Grid.Row="3" BackgroundColor="#2C3E50" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="COREDI - 2019 © Todos los derechos reservados" TextColor="White" HorizontalOptions="Center" Opacity="200" FontSize="Micro"></Label>
+                <Label Text="COREDI - 2019 © Todos los derechos reservados" TextColor="{StaticResource ColorTexto}"   HorizontalOptions="Center" Opacity="200" FontSize="Micro"></Label>
             </StackLayout>
 
             <Image Source="usuario.png" HorizontalOptions="Center" 
@@ -218,7 +218,7 @@
 
 
             <StackLayout Grid.Row="0" HorizontalOptions="Center"  Spacing="0" Margin="0,110,0,0">
-                <Label Text="Jose Luis Hinestriza Lopez" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Jose Luis Hinestriza Lopez" TextColor="{StaticResource ColorTexto}"   FontSize="Medium" FontAttributes="Bold"/>
                 <Label Text="Info. Interes" TextColor="Black" HorizontalOptions="Center" FontAttributes="Italic"/>
             </StackLayout>
 
@@ -231,13 +231,13 @@
                     </Grid.ColumnDefinitions>
                     
                     <StackLayout Spacing="0" >
-                        <Label Text="Pedidos recientes" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                        <Label Text="Pedidos recientes" HorizontalOptions="Center" TextColor="{StaticResource ColorTexto}"   FontAttributes="Bold"/>
                         <Button Text="$25.000"  BackgroundColor="Orange" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
                         <Label Text="# 3" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
                     </StackLayout>
 
                     <StackLayout Grid.Column="1" Spacing="0">
-                        <Label Text="Deuda"  TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Label Text="Deuda"  TextColor="{StaticResource ColorTexto}"   HorizontalOptions="Center" FontAttributes="Bold"/>
                         <Button Text="$25.000"  BackgroundColor="Orange" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
                         <Label Text="Pedidos: # 3" HorizontalOptions="Center" TextColor="Black" FontAttributes="Italic"/>
                     </StackLayout>
@@ -267,7 +267,7 @@
                             BorderRadius="0"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor="#17202A" BorderColor="Red" 
                             Image="nuevo.png"/>
@@ -282,7 +282,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor ="#17202A" BorderColor="SteelBlue" 
                             Image="info.png"/>
@@ -295,7 +295,7 @@
                             BorderWidth="0"
                             Opacity="100"
                             FontSize="Micro"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                            BackgroundColor ="#17202A" BorderColor="White" 
                             Image="info.png"/>
@@ -308,7 +308,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                              BackgroundColor ="#17202A" BorderColor="White" 
                             Image="info.png"/>
@@ -322,7 +322,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor ="#17202A" BorderColor="White" 
                             Image="info.png"/>
@@ -335,7 +335,7 @@
                             FontSize="Micro"
                             BorderWidth="0"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"  
                             HorizontalOptions="FillAndExpand"
                             BackgroundColor ="#17202A" BorderColor="White" 
                             Image="info.png"/>
@@ -343,7 +343,7 @@
             </Grid>
 
             <StackLayout Grid.Row="3" BackgroundColor="#2C3E50" Spacing="0" VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="COREDI - 2019 © Todos los derechos reservados" TextColor="White" HorizontalOptions="Center" Opacity="200" FontSize="Micro"></Label>
+                <Label Text="COREDI - 2019 © Todos los derechos reservados" TextColor="{StaticResource ColorTexto}"   HorizontalOptions="Center" Opacity="200" FontSize="Micro"></Label>
             </StackLayout>
             
             <Image Source="usuario.png" HorizontalOptions="Center" 

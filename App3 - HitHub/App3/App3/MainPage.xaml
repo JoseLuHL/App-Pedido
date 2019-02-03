@@ -7,8 +7,8 @@
     <StackLayout Padding="0" BackgroundColor="WhiteSmoke">
 
         <StackLayout Padding="0,50,0,25" BackgroundColor="Black" >
-            <Label Text="PEDIDOS SA." HorizontalTextAlignment="Center"  TextColor="White" FontAttributes="Bold" Margin="0,0,0,10"></Label>
-            <Label Text="Inicio de Sesión"  HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold"></Label>
+            <Label Text="PEDIDOS SA." HorizontalTextAlignment="Center"  TextColor="{StaticResource ColorTexto}"   FontAttributes="Bold" Margin="0,0,0,10"></Label>
+            <Label Text="Inicio de Sesión"  HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="{StaticResource ColorTexto}"   FontAttributes="Bold"></Label>
         </StackLayout>
 
         <StackLayout>
@@ -37,7 +37,7 @@
 
             </Grid>
             <Button Text="Entrar" x:Name="BtnEntrar2" Clicked="BtnEntrar2_Clicked"></Button>
-            <!--<Button Text="Entrar" BorderColor="White" TextColor="White"  HeightRequest="56" HorizontalOptions="FillAndExpand" BorderWidth="220" WidthRequest="200" x:Name="BtnEntrar" Clicked="BtnEntrar_Clicked"/>-->
+            <!--<Button Text="Entrar" BorderColor="White" TextColor="{StaticResource ColorTexto}"    HeightRequest="56" HorizontalOptions="FillAndExpand" BorderWidth="220" WidthRequest="200" x:Name="BtnEntrar" Clicked="BtnEntrar_Clicked"/>-->
         </StackLayout>
     </StackLayout>
 

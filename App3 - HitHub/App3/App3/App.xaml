@@ -1,10 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App3.App"
-            >
+             x:Class="App3.App">
     <Application.Resources>
-        <Color  x:Key="ColorFonfo">Blue</Color>
-        <Color  x:Key="ColorTexto">White</Color>
+        <ResourceDictionary>
+            <Color x:Key="ColorFondo">#2f4259</Color>
+            <Color x:Key="ColorTexto">White</Color>
+            <Style x:Key="EstiloBotones" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource ColorTexto}"></Setter>
+                <Setter Property="BorderWidth" Value="1"></Setter>
+                <Setter Property="BorderRadius" Value="5"></Setter>
+                <Setter Property="CornerRadius" Value="17"></Setter>
+                <Setter Property="Opacity" Value="100"></Setter>
+                <Setter Property="BackgroundColor" Value="#17202A"></Setter>
+                <Setter Property="BorderColor" Value="{StaticResource ColorTexto}"></Setter>
+                <Setter Property="WidthRequest" Value="150"></Setter>
+                <Setter Property="HeightRequest" Value="37"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+            </Style> 
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

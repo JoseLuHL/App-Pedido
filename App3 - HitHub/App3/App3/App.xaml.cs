@@ -11,11 +11,10 @@ namespace App3
     {
         public App(String filename)
         {
-            
-            UserRepositorio.Inicializador(filename);
-            //MainPage = new  PagInicio();
-            MainPage = new NavigationPage(new LoginUser());
             InitializeComponent();
+            UserRepositorio.Inicializador(filename);
+            MainPage = new NavigationPage(new LoginUser());
+            
         }
 
         protected async override void  OnStart()

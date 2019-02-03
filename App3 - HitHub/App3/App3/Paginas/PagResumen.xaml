@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Paginas.PagResumen"
-             BackgroundColor="{StaticResource ColorFonfo}">
+             BackgroundColor="{StaticResource ColorFondo}">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
 
@@ -10,7 +10,6 @@
                    BackgroundColor="{StaticResource ColorFondo}">
 
                 <Grid>
-                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />

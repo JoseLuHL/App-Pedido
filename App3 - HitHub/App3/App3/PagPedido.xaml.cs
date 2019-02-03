@@ -286,10 +286,10 @@ namespace App3
             LblVrDetalle.Text = "";
             TxtCantidad.Text = "";
             TxtIdentificacion.Text = "";
-            TxtSubTotal.Text = "0";
-            //PicProducto.
-            //var x = await CargarCombo();
-            //PicProducto.Title = "Seleccionar producto";
+            TxtSubTotal.Text = "0";            
+            PicProducto.Title = "Seleccionar producto";
+            PicProducto.ItemsSource = null;
+            PicProducto.SelectedItem = null;
             //PicProducto.
         }
 

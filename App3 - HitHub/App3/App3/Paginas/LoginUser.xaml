@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
              x:Class="App3.Paginas.LoginUser"
-             BackgroundColor="Red"
+             BackgroundColor="{StaticResource ColorFondo}"
              >
-    <ContentPage.Resources>
-        <Color  x:Key="ColorFonfo">Blue</Color>
-        <Color  x:Key="ColorTexto">White</Color>
-    </ContentPage.Resources>
-    
+   
     <ContentPage.Content>
-        <StackLayout x:Name="MainStackLayout" BackgroundColor="Red"
+        <StackLayout x:Name="MainStackLayout" BackgroundColor="{StaticResource ColorFondo}"
                Padding="8">
             <ScrollView >
-                <Grid x:Name="LayoutRoot" BackgroundColor="Red">
+                <Grid x:Name="LayoutRoot" BackgroundColor="{StaticResource ColorFondo}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -24,7 +21,7 @@
                                  Orientation="Vertical" 
                                  Margin="0,20,0,10">
 
-                        <Frame BackgroundColor="Red">                            
+                        <Frame BackgroundColor="{StaticResource ColorFondo}">                            
                             <StackLayout Orientation="Vertical" 
                                  VerticalOptions="Center" 
                                  Margin="0,5,0,0" 
@@ -42,7 +39,7 @@
                     </StackLayout>
 
                     <ActivityIndicator Grid.Row="1"  
-                                       Grid.RowSpan="3" Color="Red" 
+                                       Grid.RowSpan="3" Color="{StaticResource ColorTexto}" 
                                        VerticalOptions="Center" 
                                        HorizontalOptions="Center"/>
 
@@ -54,14 +51,15 @@
                             
                             <Entry Text="" 
                                    x:Name="TxtUsuario" 
-                                    TextColor="Red" Placeholder="Ingresa tu usuario" 
+                                    TextColor="{StaticResource ColorTexto}"  
+                                   Placeholder="Ingresa tu usuario" 
                                     PlaceholderColor="Gray" 
                                     Keyboard="Email"  
                                     HorizontalTextAlignment="Start"/>
 
                             <Entry Text="" 
                                    x:Name="TxtContraseña"  
-                                   TextColor="Red"
+                                   TextColor="{StaticResource ColorTexto}"  
                                    Placeholder="Ingresa tu contraseña" 
                                    PlaceholderColor="Gray" 
                                    IsPassword="True" 
@@ -74,13 +72,13 @@
                                          Orientation="Horizontal" Spacing="0">
                                 
                                 <ActivityIndicator x:Name="ActIndicadorCargar" 
-                                                   Color="Red" 
+                                                   Color="{StaticResource ColorTexto}" 
                                                    WidthRequest="20" 
                                                    HeightRequest="20" 
                                                    IsRunning="True"/>
                                 
                                 <Label Text="Verificando..." 
-                                       TextColor="Red"/>
+                                       TextColor="{StaticResource ColorTexto}"  />
                                 
                             </StackLayout>
                             
@@ -88,15 +86,15 @@
                                     Text="Login" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"
                                     BackgroundColor="#f57d00" 
                                     BorderRadius="10"
-                                    TextColor="Red"  />
+                                    TextColor="{StaticResource ColorTexto}"/>
 
                             <Button Text="Iniciar con Facebook"  
-                                    TextColor="Red" 
+                                    TextColor="{StaticResource ColorTexto}"
                                     BorderRadius="10" 
                                     BackgroundColor="#3b5998"/>
 
                             <Button Text="Iniciar con Google" 
-                                    TextColor="Red" 
+                                    TextColor="{StaticResource ColorTexto}"
                                     BorderRadius="10" 
                                     BackgroundColor="#c71610"/>
                             
