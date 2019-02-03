@@ -2,70 +2,104 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Paginas.LoginUser"
-             BackgroundColor="#2f4259"
+             BackgroundColor="Red"
              >
+    <ContentPage.Resources>
+        <Color  x:Key="ColorFonfo">Blue</Color>
+        <Color  x:Key="ColorTexto">White</Color>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout x:Name="MainStackLayout" BackgroundColor="#2f4259"
+        <StackLayout x:Name="MainStackLayout" BackgroundColor="Red"
                Padding="8">
             <ScrollView >
-                <Grid x:Name="LayoutRoot" BackgroundColor="#2f4259">
+                <Grid x:Name="LayoutRoot" BackgroundColor="Red">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <StackLayout Grid.Row="0" Orientation="Vertical" Margin="0,20,0,10">
-                        <Frame BackgroundColor="#34465d">
+                    
+                    <StackLayout Grid.Row="0" 
+                                 Orientation="Vertical" 
+                                 Margin="0,20,0,10">
+
+                        <Frame BackgroundColor="Red">                            
                             <StackLayout Orientation="Vertical" 
                                  VerticalOptions="Center" 
                                  Margin="0,5,0,0" 
                                  Opacity="0.8">
-                                <Image Source="login.png" Aspect="AspectFit" Margin="10" HeightRequest="100" WidthRequest="100"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                                
+                                <Image Source="login.png" 
+                                       Aspect="AspectFit" 
+                                       Margin="5" 
+                                       HeightRequest="100" 
+                                       WidthRequest="100"  
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Center"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
 
-                    <ActivityIndicator Grid.Row="1"  Grid.RowSpan="3" Color="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <ActivityIndicator Grid.Row="1"  
+                                       Grid.RowSpan="3" Color="Red" 
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Center"/>
 
                     <StackLayout Grid.Row="2" 
                          Orientation="Vertical"  
                          Opacity="0.8">
 
-                        <StackLayout Orientation="Vertical" 
-                            >
-                            <Entry Text="" x:Name="TxtUsuario" 
-                           TextColor="White" Placeholder="Ingresa tu usuario" 
-                           PlaceholderColor="Gray" 
-                           Keyboard="Email"  
-                           HorizontalTextAlignment="Start"/>
+                        <StackLayout Orientation="Vertical">
+                            
+                            <Entry Text="" 
+                                   x:Name="TxtUsuario" 
+                                    TextColor="Red" Placeholder="Ingresa tu usuario" 
+                                    PlaceholderColor="Gray" 
+                                    Keyboard="Email"  
+                                    HorizontalTextAlignment="Start"/>
 
-                            <Entry Text="" x:Name="TxtContraseña"  
-                           TextColor="White" 
-                           Placeholder="Ingresa tu contraseña" 
-                           PlaceholderColor="Gray" 
-                           IsPassword="True" 
-                           HorizontalTextAlignment="Start"/>
+                            <Entry Text="" 
+                                   x:Name="TxtContraseña"  
+                                   TextColor="Red"
+                                   Placeholder="Ingresa tu contraseña" 
+                                   PlaceholderColor="Gray" 
+                                   IsPassword="True" 
+                                   HorizontalTextAlignment="Start"/>
 
-                            <StackLayout x:Name="Activador" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center"  Orientation="Horizontal" Spacing="0">
-                                <ActivityIndicator x:Name="ActIndicadorCargar" Color="White" WidthRequest="20" HeightRequest="20" IsRunning="True"/>
-                                <Label Text="Verificando..." TextColor="White"/>
+                            <StackLayout x:Name="Activador" 
+                                         IsVisible="False" 
+                                         HorizontalOptions="Center" 
+                                         VerticalOptions="Center"  
+                                         Orientation="Horizontal" Spacing="0">
+                                
+                                <ActivityIndicator x:Name="ActIndicadorCargar" 
+                                                   Color="Red" 
+                                                   WidthRequest="20" 
+                                                   HeightRequest="20" 
+                                                   IsRunning="True"/>
+                                
+                                <Label Text="Verificando..." 
+                                       TextColor="Red"/>
+                                
                             </StackLayout>
                             
                             <Button Margin="0,10" 
-                            Text="Login" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"
-                            BackgroundColor="#f57d00" 
-                            BorderRadius="10"
-                            TextColor="White"  />
+                                    Text="Login" x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"
+                                    BackgroundColor="#f57d00" 
+                                    BorderRadius="10"
+                                    TextColor="Red"  />
 
                             <Button Text="Iniciar con Facebook"  
-                            TextColor="White" 
-                            BorderRadius="10" 
-                            BackgroundColor="#3b5998"/>
+                                    TextColor="Red" 
+                                    BorderRadius="10" 
+                                    BackgroundColor="#3b5998"/>
 
                             <Button Text="Iniciar con Google" 
-                            TextColor="White" 
-                            BorderRadius="10" 
-                            BackgroundColor="#c71610"/>
+                                    TextColor="Red" 
+                                    BorderRadius="10" 
+                                    BackgroundColor="#c71610"/>
+                            
                         </StackLayout>
                     </StackLayout>
                 </Grid>

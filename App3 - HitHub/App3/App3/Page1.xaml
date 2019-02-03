@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App3.Paginas.Page1">
+             x:Class="App3.Paginas.Page1"
+             BackgroundColor="#2f4259">
     <ContentPage.Content>
         <StackLayout Margin="10" >
             <!--<Button Text="Probar" Clicked="Button_Clicked"/>-->
             <StackLayout Spacing="0">
-                <Label Text="PEDIDOS PENDIENTES" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
-                <ListView x:Name="LstPedido" ItemsSource="{Binding .}" SeparatorColor="Black"  HeightRequest="160" ItemSelected="LstPedido_ItemSelected" HasUnevenRows="True">
+                <Label Text="PEDIDOS PENDIENTES" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                <ListView x:Name="LstPedido" SeparatorColor="White" ItemsSource="{Binding .}"  HeightRequest="160" ItemSelected="LstPedido_ItemSelected" HasUnevenRows="True">
                     <ListView.ItemTemplate >
                         <DataTemplate>
                             <ViewCell>
@@ -22,10 +23,10 @@
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding Ped_Numero}"></Label>
-                                        <Label Text="{Binding Ped_Fecha}" Margin="10,0,0,0"  Grid.Column="1"></Label>
-                                        <Label Text="{Binding Ped_Valor , StringFormat='{0:N}'}" HorizontalTextAlignment="Center" Grid.Column="2" FontAttributes="Bold"></Label>
-                                        <Label Text="{Binding Ped_Estado}" TextColor="Green" Grid.Column="3"></Label>
+                                        <Label Text="{Binding Ped_Numero}" TextColor="White" ></Label>
+                                        <Label Text="{Binding Ped_Fecha}" TextColor="White"  Margin="10,0,0,0"  Grid.Column="1"></Label>
+                                        <Label Text="{Binding Ped_Valor , StringFormat='{0:N}'}" TextColor="White"  HorizontalTextAlignment="Center" Grid.Column="2" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding Ped_Estado}" TextColor="Yellow" Grid.Column="3"></Label>
                                     </Grid>
                                 </ViewCell.View>
                             </ViewCell>
@@ -36,7 +37,7 @@
            
             
             <StackLayout x:Name="ActDetallePedido" IsVisible="False">
-                <Label Text="DETALLE DE PEDIDO" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                <Label Text="DETALLE DE PEDIDO" HorizontalOptions="Center" TextColor="White"  FontAttributes="Bold" FontSize="Large"/>
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
@@ -48,13 +49,13 @@
                         <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
 
-                    <Label Text="Codigo" HorizontalOptions="Start" />
-                    <Label Text="Descripción" Grid.Column="1"/>
-                    <Label Text="Cantidad"  Grid.Column="2"/>
-                    <Label Text="Var Detalle"  Grid.Column="3"/>
+                    <Label Text="Codigo" TextColor="White"  HorizontalOptions="Start" />
+                    <Label Text="Descripción" TextColor="White"  Grid.Column="1"/>
+                    <Label Text="Cantidad" TextColor="White"  Grid.Column="2"/>
+                    <Label Text="Var Detalle" TextColor="White" Grid.Column="3"/>
                 </Grid>
                 <StackLayout>
-                    <ListView x:Name="ListaEst" ItemsSource="{Binding .}"  HasUnevenRows="True">
+                    <ListView x:Name="ListaEst" ItemsSource="{Binding .}"  SeparatorColor="White" HasUnevenRows="True">
                         <ListView.ItemTemplate >
                             <DataTemplate>
                                 <ViewCell >
@@ -70,10 +71,10 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition/>
                                             </Grid.RowDefinitions>
-                                            <Label Text="{Binding Codigo}"></Label>
-                                            <Label Text="{Binding Descripcion}" Grid.Column="1"></Label>
-                                            <Label Text="{Binding Cantidad}" HorizontalTextAlignment="Center"  Grid.Column="2"></Label>
-                                            <Label Text="{Binding VarDetalle , StringFormat='{0:N}'}" HorizontalTextAlignment="Center" Grid.Column="3" FontAttributes="Bold"></Label>
+                                            <Label Text="{Binding Codigo}" TextColor="White" ></Label>
+                                            <Label Text="{Binding Descripcion}" TextColor="White"  Grid.Column="1"></Label>
+                                            <Label Text="{Binding Cantidad}" TextColor="White"  HorizontalTextAlignment="Center"  Grid.Column="2"></Label>
+                                            <Label Text="{Binding VarDetalle , StringFormat='{0:N}'}" TextColor="White"  HorizontalTextAlignment="Center" Grid.Column="3" FontAttributes="Bold"></Label>
                                         </Grid>
                                     </ViewCell.View>
                                 </ViewCell>
@@ -84,11 +85,11 @@
             </StackLayout>
             
 
-            <StackLayout x:Name="Activador" IsVisible="False"  Orientation="Horizontal" Spacing="0">
-                <ActivityIndicator x:Name="ActIndicadorCargar" Color="Maroon" WidthRequest="20" HeightRequest="20" IsRunning="True"/>
-                <Label Text="Cargando"/>
+            <StackLayout x:Name="Activador" IsVisible="False"   Orientation="Horizontal" Spacing="0">
+                <ActivityIndicator x:Name="ActIndicadorCargar" Color="White" WidthRequest="20" HeightRequest="20" IsRunning="True"/>
+                <Label Text="Cargando" TextColor="White" />
             </StackLayout>
-            <Label Text="...." x:Name="LblMensaje"/>
+            <Label Text="...." x:Name="LblMensaje" TextColor="White" />
             <Button Text="Cancelar Pedido" x:Name="BtnCancelarPediso" Clicked="BtnCancelarPediso_Clicked"/>
 
         </StackLayout>

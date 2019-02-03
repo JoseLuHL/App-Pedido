@@ -6,7 +6,10 @@
     <ContentPage.Content>
         <!--<ScrollView>-->
         <StackLayout Padding="10" Margin="0,0,0,0">
-            <Frame HasShadow="true"  CornerRadius="7" BackgroundColor="#2f4259" OutlineColor="White">
+            <Frame HasShadow="true"  
+                   CornerRadius="7" 
+                   BackgroundColor="{StaticResource ColorFonfo}" 
+                   OutlineColor="White">
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -17,9 +20,20 @@
                         <RowDefinition Height="50"/>
                         <RowDefinition  Height="20"/>
                     </Grid.RowDefinitions>
+                    
                     <StackLayout Orientation="Horizontal">
-                        <Entry VerticalOptions="EndAndExpand"  TextColor="White"  Completed="TxtIdentificacion_Completed" x:Name="TxtIdentificacion" HorizontalOptions="FillAndExpand"/>
-                        <Image x:Name="ImgCliente"  IsVisible="True"  Source="lupa.png" VerticalOptions="End"  HeightRequest="23" >
+                        
+                        <Entry VerticalOptions="EndAndExpand"  
+                               TextColor="{StaticResource ColorTexto}"  
+                               Completed="TxtIdentificacion_Completed" 
+                               x:Name="TxtIdentificacion" 
+                               HorizontalOptions="FillAndExpand"/>
+                        
+                        <Image x:Name="ImgCliente"  
+                               IsVisible="True"  
+                               Source="lupa.png" 
+                               VerticalOptions="End"  
+                               HeightRequest="23" >
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer                                    
                                 Tapped="OnImageNameTapped"
@@ -27,21 +41,41 @@
                             </Image.GestureRecognizers>
                         </Image>
 
-                        <ActivityIndicator VerticalOptions="End" Color="Yellow" HorizontalOptions="End"  WidthRequest="20" HeightRequest="15" x:Name="ActvConsultarCliente" IsRunning="False"/>
+                        <ActivityIndicator VerticalOptions="End" 
+                                           Color="Yellow" 
+                                           HorizontalOptions="End" 
+                                           WidthRequest="20" 
+                                           HeightRequest="15" 
+                                           x:Name="ActvConsultarCliente" 
+                                           IsRunning="False"/>
                     </StackLayout>
 
-                    <Label TextColor="White" Text="Documento:"  Grid.Row="1"/>
+                    <Label TextColor="{StaticResource ColorTexto}" 
+                           Text="Documento:" 
+                           Grid.Row="1"/>
 
-                    <Label Text="" TextColor="White" x:Name="LblNombreCliente" Grid.Column="1" VerticalOptions="EndAndExpand"/>
-                    <Label Text="Nombre:" TextColor="White" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="" 
+                           TextColor="{StaticResource ColorTexto}"
+                           x:Name="LblNombreCliente" 
+                           Grid.Column="1" 
+                           VerticalOptions="EndAndExpand"/>
+                    
+                    <Label Text="Nombre:" 
+                           TextColor="{StaticResource ColorTexto}" 
+                           Grid.Row="1" Grid.Column="1"/>
                 </Grid>
             </Frame>
 
-            <Frame HasShadow="True" BackgroundColor="#2f4259">
-                <Picker x:Name="PicProducto" TextColor="White" Title="Seleccionar producto" SelectedIndexChanged="PicProducto_SelectedIndexChanged" ></Picker>
+            <Frame HasShadow="True" 
+                   BackgroundColor="{StaticResource ColorFonfo}">
+                
+                <Picker x:Name="PicProducto" 
+                        TextColor="{StaticResource ColorTexto}" 
+                        Title="Seleccionar producto" 
+                        SelectedIndexChanged="PicProducto_SelectedIndexChanged" ></Picker>
             </Frame>
 
-            <Frame HasShadow="true" BackgroundColor="#2f4259">
+            <Frame HasShadow="true" BackgroundColor="{StaticResource ColorFonfo}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -54,18 +88,43 @@
                         <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
 
-                    <Label Text="" TextColor="White" x:Name="LblDescripcionProducto" VerticalOptions="EndAndExpand"/>
-                    <Label Text="Descripción:" TextColor="White" Grid.Row="1"/>
+                    <Label Text="" 
+                           TextColor="{StaticResource ColorTexto}" 
+                           x:Name="LblDescripcionProducto" 
+                           VerticalOptions="EndAndExpand"/>
+                    
+                    <Label Text="Descripción:" 
+                           TextColor="{StaticResource ColorTexto}" 
+                           Grid.Row="1"/>
 
-                    <Entry  Grid.Column="1" TextColor="White" Keyboard="Numeric" x:Name="TxtCantidad" HorizontalTextAlignment="Center"/>
-                    <Label Text="Cantidad:" TextColor="White" Grid.Row="1" Grid.Column="1"/>
+                    <Entry  Grid.Column="1" 
+                            TextColor="{StaticResource ColorTexto}" 
+                            Keyboard="Numeric" 
+                            x:Name="TxtCantidad" 
+                            HorizontalTextAlignment="Center"/>
+                    
+                    <Label Text="Cantidad:" 
+                           TextColor="{StaticResource ColorTexto}" 
+                           Grid.Row="1" Grid.Column="1"/>
 
-                    <Label Text="" x:Name="LblVrDetalle" TextColor="White" VerticalOptions="EndAndExpand" Grid.Column="2" FontAttributes="Bold" FontSize="Large" />
-                    <Label Text="Vr Detalle:" Grid.Row="1" TextColor="White" Grid.Column="2"/>
+                    <Label Text="" 
+                           x:Name="LblVrDetalle" 
+                           TextColor="{StaticResource ColorTexto}" 
+                           VerticalOptions="EndAndExpand" 
+                           Grid.Column="2" 
+                           FontAttributes="Bold" 
+                           FontSize="Large" />
+                    
+                    <Label Text="Vr Detalle:" 
+                           Grid.Row="1" 
+                           TextColor="{StaticResource ColorTexto}" 
+                           Grid.Column="2"/>
                 </Grid>
             </Frame>
 
-            <StackLayout HorizontalOptions="CenterAndExpand"   Orientation="Horizontal">
+            <StackLayout HorizontalOptions="CenterAndExpand"   
+                         Orientation="Horizontal">
+                
                 <Button Text="Agregar" 
                             x:Name="BtnAgregar" 
                             Clicked="BtnAgregar_Clicked" 
@@ -78,7 +137,7 @@
                     HeightRequest="37"
                     WidthRequest="150"
                         Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"
                             BackgroundColor ="#17202A" BorderColor="White" 
                              />
                 <Button Text="Limpiar"
@@ -87,7 +146,7 @@
                             CornerRadius="17"
                             VerticalOptions="Center"
                         Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"
                             BackgroundColor ="#17202A" BorderColor="White" 
                     HorizontalOptions="Center"
                     HeightRequest="37"
@@ -107,10 +166,10 @@
                         <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
 
-                    <Label Text="Codigo" TextColor="White" />
-                    <Label Text="Descripción" TextColor="White" Grid.Column="1"/>
-                    <Label Text="Cantidad" TextColor="White" Grid.Column="2"/>
-                    <Label Text="Var Detalle" TextColor="White" Grid.Column="3"/>
+                    <Label Text="Codigo" TextColor="{StaticResource ColorTexto}" />
+                    <Label Text="Descripción" TextColor="{StaticResource ColorTexto}" Grid.Column="1"/>
+                    <Label Text="Cantidad" TextColor="{StaticResource ColorTexto}" Grid.Column="2"/>
+                    <Label Text="Var Detalle" TextColor="{StaticResource ColorTexto}" Grid.Column="3"/>
                 </Grid>
             </StackLayout>
 
@@ -131,10 +190,10 @@
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding Codigo}" TextColor="White" ></Label>
-                                        <Label Text="{Binding Descripcion}" TextColor="White" Margin="10,0,0,0"  Grid.Column="1"></Label>
-                                        <Label Text="{Binding Cantidad}" TextColor="White" HorizontalTextAlignment="Center"  Grid.Column="2"></Label>
-                                        <Label Text="{Binding VarDetalle , StringFormat='{0:N}'}" TextColor="White" HorizontalTextAlignment="Center" Grid.Column="3" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding Codigo}" TextColor="{StaticResource ColorTexto}" ></Label>
+                                        <Label Text="{Binding Descripcion}" TextColor="{StaticResource ColorTexto}" Margin="10,0,0,0"  Grid.Column="1"></Label>
+                                        <Label Text="{Binding Cantidad}" TextColor="{StaticResource ColorTexto}" HorizontalTextAlignment="Center"  Grid.Column="2"></Label>
+                                        <Label Text="{Binding VarDetalle , StringFormat='{0:N}'}" TextColor="{StaticResource ColorTexto}" HorizontalTextAlignment="Center" Grid.Column="3" FontAttributes="Bold"></Label>
                                     </Grid>
                                 </ViewCell.View>
                             </ViewCell>
@@ -156,7 +215,7 @@
                     <Button Text="Guardar" x:Name="BtnGuardar"  
                     Clicked="BtnGuardar_Clicked"
                             Opacity="100"
-                            TextColor="White"
+                            TextColor="{StaticResource ColorTexto}"
                             BackgroundColor ="#17202A" BorderColor="White" 
                     BorderWidth="1"
                     BorderRadius="5"
@@ -169,7 +228,7 @@
                 </StackLayout>
 
                 <Label x:Name="TxtSubTotal" 
-                       TextColor="White" 
+                       TextColor="{StaticResource ColorTexto}"
                        Text="0" Grid.Column="1"
                        FontSize="20" 
                        VerticalOptions="CenterAndExpand" 

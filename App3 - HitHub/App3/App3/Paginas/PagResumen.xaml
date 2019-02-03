@@ -1,66 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App3.Paginas.PagResumen">
+             x:Class="App3.Paginas.PagResumen"
+             BackgroundColor="{StaticResource ColorFonfo}">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame HasShadow="False">
-                <TableView Intent="Settings">
-                    <TableRoot>
+        <StackLayout VerticalOptions="Center">
 
-                        <TableSection Title="RESUMEN RECIENTE" >
-                            <ViewCell >
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="" x:Name="LblRecienteDes" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
-                                    <Label Text="$25,500" x:Name="LblRecienteValor" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
-                                </StackLayout>
-                            </ViewCell>
-                            <!--Total Recientes-->
-                        </TableSection>
-                        <TableSection Title="RESUMEN POR ENTREGAR">
-                            <ViewCell >
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="" x:Name="LblEntregadoDes" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
-                                    <Label Text="$25,500" x:Name="LblEntregadoValor" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
-                                </StackLayout>
-                            </ViewCell>
-                        </TableSection>
-                        <!--Total por Entregar-->
-                        <TableSection Title="RESUMEN VENDIDOS">
-                            <ViewCell >
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="" x:Name="LblVendidoDes" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
-                                    <Label Text="$25,500" x:Name="LblVendidoValor" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
-                                </StackLayout>
-                            </ViewCell>
-                        </TableSection>
-                        <!--Total Cancelado-->
-                        <TableSection Title="Resumen Total Consumo">
-                            <ViewCell >
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="" x:Name="LblConsumoDes" FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#f35e20" />
-                                    <Label Text="$25,500" x:Name="LblConsumoValor" FontAttributes="Bold" FontSize="Large" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#503026" />
-                                </StackLayout>
-                            </ViewCell>
-                        </TableSection>
-                    </TableRoot>
-                </TableView>
+            <Frame HasShadow="False" 
+                   BackgroundColor="{StaticResource ColorFondo}">
+
+                <Grid>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition />
+                        <RowDefinition Height="2"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="RESUMEN RECIENTE" 
+                           FontSize="Default"  
+                           TextColor="{StaticResource ColorTexto}"/>
+
+                    <Label Text="$25,500" 
+                           TextColor="{StaticResource ColorTexto}"
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center"
+                           Grid.Column="1"/>
+
+                    <BoxView HorizontalOptions="FillAndExpand" 
+                             Grid.Row="1"  
+                             Grid.ColumnSpan="2" 
+                             HeightRequest="1" 
+                             Color="#1690F4"/>
+
+                    <Label Text="RESUMEN POR ENTREGAR" 
+                           FontSize="Default" 
+                           Grid.Row="2" 
+                           TextColor="{StaticResource ColorTexto}"/>
+
+                    <Label Text="$25,500" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" 
+                           TextColor="{StaticResource ColorTexto}"
+                           Grid.Row="2" 
+                           Grid.Column="1"/>
+
+                    <BoxView HorizontalOptions="FillAndExpand" 
+                             Grid.Row="3" 
+                             Grid.ColumnSpan="2" 
+                             HeightRequest="2" 
+                             Color="#22A558"/>
+
+                    <Label Text="RESUMEN VENDIDOS" 
+                           FontSize="Default" 
+                           Grid.Row="4" 
+                           TextColor="{StaticResource ColorTexto}"/>
+
+                    <Label Text="$25,500" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" 
+                           TextColor="{StaticResource ColorTexto}"
+                           Grid.Row="4" 
+                           Grid.Column="1"/>
+
+                    <BoxView HorizontalOptions="FillAndExpand" 
+                             Grid.Row="5" 
+                             Grid.ColumnSpan="2" 
+                             HeightRequest="2" 
+                             Color="#AE72E7"/>
+
+                    <Label Text="Resumen Total Consumo" 
+                           FontSize="Default" 
+                           Grid.Row="6" 
+                           TextColor="{StaticResource ColorTexto}"/>
+
+                    <Label Text="$25,500" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" 
+                           FontAttributes="Bold" 
+                           FontSize="Large" 
+                           TextColor="{StaticResource ColorTexto}"
+                           Grid.Row="6" 
+                           Grid.Column="1"/>
+                </Grid>
             </Frame>
-
-            <!--<Frame OutlineColor="Black"> Total: 
-                <Label Text="Blah blah blah" />
-                <Label Text="Blah blah blah" />
-            </Frame>-->
-
-            <!--<Frame HasShadow="False" CornerRadius="25" Padding="2" BackgroundColor="#F69927">
-                <Frame HasShadow="False" CornerRadius="23" BackgroundColor="White" Padding="12">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
-                        <Label Text="Blah blah blah" />
-                        <Label Text="Blah blah blah" />
-                    </StackLayout>
-                </Frame>
-            </Frame>-->
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
